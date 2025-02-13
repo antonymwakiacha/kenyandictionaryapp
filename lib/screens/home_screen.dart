@@ -30,29 +30,32 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(
             height: 20,
           ),
-          Container(
-            //margin: EdgeInsets.only(left: 70, right: 50),
-            margin: EdgeInsets.only(
-              right: 0,
-              left: 20,
-            ),
-            padding: EdgeInsets.only(
-              left: 110,
-              right: 110,
-              top: 20,
-              bottom: 20,
-            ),
-            decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(8),
-                border: Border()),
-            child: Text(
-              "Explore/Search ",
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                fontFamily: 'sans-serif',
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, '/dictionary'),
+            child: Container(
+              //margin: EdgeInsets.only(left: 70, right: 50),
+              margin: EdgeInsets.only(
+                right: 0,
+                left: 20,
+              ),
+              padding: EdgeInsets.only(
+                left: 110,
+                right: 110,
+                top: 20,
+                bottom: 20,
+              ),
+              decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border()),
+              child: Text(
+                "Explore/Search ",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                  fontFamily: 'sans-serif',
+                ),
               ),
             ),
           ),
@@ -67,6 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Container(
                   width: 250,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(60),
+                  ),
                   //color: Colors.grey,
                   child: Column(
                     children: [
@@ -76,6 +82,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           top: 5,
                         ),
                         color: Colors.black,
+                        // decoration: BoxDecoration(
+                        //     borderRadius: BorderRadius.circular(5)),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

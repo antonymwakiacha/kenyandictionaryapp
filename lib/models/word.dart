@@ -1,11 +1,11 @@
 class Word {
-  String? name;
-  String? type;
-  String? meaning;
+  final String name;
+  final String meaning;
+  bool isBookmarked;
 
   Word({
     required this.name,
-    required this.type,
     required this.meaning,
+    this.isBookmarked = false,
   });
 }

@@ -1,11 +1,7 @@
 class Idiom {
-  String? phrase;
-  String? type;
-  String? meaning;
+  final String phrase;
+  final String meaning;
+  bool isBookmarked;
 
-  Idiom({
-    required this.phrase,
-    required this.type,
-    required this.meaning,
-  });
+  Idiom({required this.phrase, required this.meaning, this.isBookmarked = false});
 }
