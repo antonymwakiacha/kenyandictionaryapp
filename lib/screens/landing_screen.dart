@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import '';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});

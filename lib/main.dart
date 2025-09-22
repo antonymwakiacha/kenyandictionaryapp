@@ -5,8 +5,17 @@ import 'package:kenyandictionaryapp/screens/dictionary_screen.dart';
 import 'package:kenyandictionaryapp/screens/landing_screen.dart';
 import 'package:kenyandictionaryapp/screens/home_screen.dart';
 import 'package:kenyandictionaryapp/screens/list_view.dart';
+import 'package:kenyandictionaryapp/utils/supabase_config.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+void main() async {
+ WidgetsFlutterBinding.ensureInitialized();
+  
+  await dotenv.load(fileName: ".env");
+  
+  // Initialize Supabase
+  await SupabaseConfig.initialize();
+  
   runApp(const MyApp());
 }
 
