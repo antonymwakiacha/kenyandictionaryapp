@@ -152,7 +152,7 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                     fillColor: Colors.white,
                     contentPadding: EdgeInsets.symmetric(horizontal: 12),
                   ),
-                  style: TextStyle(color: Colors.black),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
                   onChanged: _filterItems,
                 )
               : Text(

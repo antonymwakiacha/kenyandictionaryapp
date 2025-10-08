@@ -32,7 +32,7 @@ class LandingPage extends StatelessWidget {
                 padding: EdgeInsets.all(25),
                 margin: EdgeInsets.only(
                   left: 70,
-                  right: 50,
+                  right: 50, 
                 ),
                 decoration: BoxDecoration(
                     color: Colors.black,
