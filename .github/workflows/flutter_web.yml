@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout repository
+      # Step 1: Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -29,7 +29,18 @@ jobs:
         run: flutter pub get
         working-directory: kenyandictionaryapp
 
-      # Step 4: Build Flutter web app with Supabase keys
+      # Step 4: Build Flutter web app
       - name: Build Flutter Web
         run: flutter build web --release \
           --base-href /kenyandictionaryapp/ \
+          --dart-define=SUPABASE_URL=${{ secrets.SUPABASE_URL }} \
+          --dart-define=SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
+        working-directory: kenyandictionaryapp
+
+      # Step 5: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: kenyandictionaryapp/build/web
+          keep_files: false
