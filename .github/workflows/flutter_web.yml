@@ -27,8 +27,6 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: flutter pub get
-        # working-directory: kenyandictionaryapp
-        working-directory: ''
 
       # Step 4: Build Flutter web app
       - name: Build Flutter Web
@@ -36,12 +34,11 @@ jobs:
           --base-href /kenyandictionaryapp/ \
           --dart-define=SUPABASE_URL=${{ secrets.SUPABASE_URL }} \
           --dart-define=SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
-        working-directory: kenyandictionaryapp
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: kenyandictionaryapp/build/web
+          publish_dir: build/web
           keep_files: false
