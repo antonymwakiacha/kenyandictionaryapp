@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
+      # Step 1: Checkout repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -25,15 +25,16 @@ jobs:
           channel: stable
 
       # Step 3: Install dependencies
-      - name: Install dependencies
+      - name: Install Dependencies
         run: flutter pub get
 
-      # Step 4: Build Flutter web app
+      # Step 4: Build Flutter Web
       - name: Build Flutter Web
-        run: flutter build web --release \
-          --base-href /kenyandictionaryapp/ \
-          --dart-define=SUPABASE_URL=${{ secrets.SUPABASE_URL }} \
-          --dart-define=SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          flutter build web --release \
+            --base-href /kenyandictionaryapp/ \
+            --dart-define=SUPABASE_URL=${{ secrets.SUPABASE_URL }} \
+            --dart-define=SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
