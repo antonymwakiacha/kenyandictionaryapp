@@ -3,36 +3,33 @@ name: Deploy Flutter Web App
 on:
   push:
     branches:
-      - main
+      - main  # deploy when pushing to main branch
 
 permissions:
-  contents: write
+  contents: write  # required for GitHub Pages
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      # Step 1: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # Step 2: Set up Flutter
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.3'
           channel: stable
 
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: flutter pub get
         working-directory: kenyandictionaryapp
 
-      - name: Build Flutter web
-        run: flutter build web --release --dart-define=SUPABASE_URL=${{ secrets.SUPABASE_URL }} --dart-define=SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
-        working-directory: kenyandictionaryapp
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: kenyandictionaryapp/build/web
-          keep_files: false
+      # Step 4: Build Flutter web app with Supabase keys
+      - name: Build Flutter Web
+        run: flutter build web --release \
+          --base-href /kenyandictionaryapp/ \
