@@ -45,6 +45,6 @@ app.*.map.json
 /android/app/release
 
 .env
-.firebase
-.firebase.json
-.firebaserc
+firebase
+firebase.json
+firebaserc
