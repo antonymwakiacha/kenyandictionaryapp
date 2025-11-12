@@ -161,13 +161,13 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                 });
               },
             ),
-            IconButton(
-              icon: Icon(
-                showBookmarksOnly ? Icons.bookmark : Icons.bookmark_border,
-                color: Colors.amberAccent,
-              ),
-              onPressed: () => setState(() => showBookmarksOnly = !showBookmarksOnly),
-            ),
+            // IconButton(
+            //   icon: Icon(
+            //     showBookmarksOnly ? Icons.bookmark : Icons.bookmark_border,
+            //     color: Colors.amberAccent,
+            //   ),
+            //   onPressed: () => setState(() => showBookmarksOnly = !showBookmarksOnly),
+            // ),
           ],
           bottom: TabBar(
             indicatorColor: Colors.amberAccent,

@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "kenyandictionaryapp"
-  }
+    "default": "kenyandictionaryapp-7ef26"
+  },
+  "targets": {},
+  "etags": {}
 }
