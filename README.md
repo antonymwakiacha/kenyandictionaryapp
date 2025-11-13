@@ -193,13 +193,7 @@ You’re free to use and modify the **codebase** for learning or personal projec
 
 ---
 
-This version now gives **three ways to access your app**:
 
-1. Web App on Firebase ✅
-2. APK download from GitHub ✅
-3. Demo video on Google Drive ✅
-
----
 
 
 
