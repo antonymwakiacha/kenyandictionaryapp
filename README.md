@@ -28,7 +28,7 @@
 
 | Landing Screen                            | Home Screen 1                           | Home Screen 2                           |
 | ----------------------------------------- | --------------------------------------- | --------------------------------------- |
-| ![Landing](screenshots/landingscreen.jpg) | ![Home1](screenshots/hoomescreen1.jpeg) | ![Home2](screenshots/hoomescreen2.jpeg) |
+| ![Landing](screenshots/landingscreen.jpeg) | ![Home1](screenshots/homescreen1.jpeg) | ![Home2](screenshots/homescreen2.jpeg) |
 
 ### Explore, Idiom & Bookmarks Screens
 
