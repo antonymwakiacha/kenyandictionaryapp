@@ -1,28 +1,60 @@
 
+---
 
 # 🇰🇪 Kenyan Dictionary App
 
+[![Web App](https://img.shields.io/badge/Web%20App-View-blueviolet?style=for-the-badge\&logo=firefox\&logoColor=white)](https://kenyandictionaryapp-7ef26.web.app/)
+[![Demo](https://img.shields.io/badge/Demo-View-blue?style=for-the-badge\&logo=youtube\&logoColor=white)](https://drive.google.com/file/d/11CCCVQ_3rRnM3pLHzHy5e7P_7Z0LvpAr/view?usp=sharing)
+[![APK](https://img.shields.io/badge/APK-Download-green?style=for-the-badge\&logo=android\&logoColor=white)](https://github.com/antonymwakiacha/kenyandictionaryapp/raw/main/apk/KenyanDictionaryApp.apk)
 [![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge\&logo=flutter\&logoColor=white)](https://flutter.dev)
 [![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge\&logo=supabase\&logoColor=white)](https://supabase.com)
 [![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge\&logo=django\&logoColor=white)](https://www.djangoproject.com/)
 [![Railway](https://img.shields.io/badge/Railway-FF0000?style=for-the-badge\&logo=railway\&logoColor=white)](https://railway.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-A **Flutter-powered dictionary app** that curates and presents popular Kenyan idioms, slang, and cultural expressions.
-It uses **Supabase** for real-time data storage and a **Django backend proxy**, deployed on **Railway**, for secure API communication.
+---
+
+## 🎬 Access the App
+
+* **Web App:** [Open in Browser](https://kenyandictionaryapp-7ef26.web.app/)
+* **View the app demo:** [Watch Demo](https://drive.google.com/file/d/11CCCVQ_3rRnM3pLHzHy5e7P_7Z0LvpAr/view?usp=sharing)
+* **Download the APK:** [Get APK](https://github.com/antonymwakiacha/kenyandictionaryapp/raw/main/apk/KenyanDictionaryApp.apk)
 
 ---
 
-## 🧠 Overview
+## 🖼️ App Screenshots Gallery
 
-The **Kenyan Dictionary App** documents and preserves Kenyan idioms and phrases in a fun, accessible way.
-It’s built with **Flutter** (frontend), **Supabase** (database), and a **Django proxy API** (backend) deployed on **Railway** for secure, full-stack architecture.
+### Landing & Home Screens
 
-> 🛠️ This project is part of my **Flutter portfolio**, demonstrating complete mobile app development — from backend to UI.
+| Landing Screen                            | Home Screen 1                           | Home Screen 2                           |
+| ----------------------------------------- | --------------------------------------- | --------------------------------------- |
+| ![Landing](screenshots/landingscreen.jpg) | ![Home1](screenshots/hoomescreen1.jpeg) | ![Home2](screenshots/hoomescreen2.jpeg) |
+
+### Explore, Idiom & Bookmarks Screens
+
+| Explore Screen                             | Idiom Screen                           | Bookmarks Screen                               |
+| ------------------------------------------ | -------------------------------------- | ---------------------------------------------- |
+| ![Explore](screenshots/explorescreen.jpeg) | ![Idiom](screenshots/idiomscreen.jpeg) | ![Bookmarks](screenshots/bookmarksscreen.jpeg) |
+
+### Search & Example Results Screens
+
+| Search Bar                                  | Example Results                                   |
+| ------------------------------------------- | ------------------------------------------------- |
+| ![Search](screenshots/searchbarscreen.jpeg) | ![Results](screenshots/exampleresultsscreen.jpeg) |
+
+**Captions / Flow Overview:**
+
+* **Landing & Home Screens:** Entry point and main browsing interface
+* **Explore, Idiom & Bookmarks Screens:** Navigating content and saving favorites
+* **Search & Example Results Screens:** Searching and viewing idioms
 
 ---
 
-## 🚀 Features
+## 🌟 Features
+
+[![Search](https://img.shields.io/badge/Feature-Search-blue?style=for-the-badge\&logo=search\&logoColor=white)](https://github.com/antonymwakiacha/kenyandictionaryapp)
+[![Bookmarks](https://img.shields.io/badge/Feature-Bookmarks-orange?style=for-the-badge\&logo=bookmark\&logoColor=white)](https://github.com/antonymwakiacha/kenyandictionaryapp)
+[![Real-time Updates](https://img.shields.io/badge/Feature-Real--time%20Updates-purple?style=for-the-badge\&logo=zap\&logoColor=white)](https://github.com/antonymwakiacha/kenyandictionaryapp)
 
 * 🔤 Explore Kenyan idioms and their meanings
 * 🔍 Smart search functionality
@@ -56,12 +88,6 @@ Django Backend Proxy (API Layer, deployed on Railway)
    ↓
 Supabase Database (Idioms & Words Tables)
 ```
-
-The **Django proxy** acts as a secure API middle layer to:
-
-* Hide Supabase service keys
-* Enforce authentication and access control
-* Manage request and response logic securely
 
 Repository: [supabase_proxy_backend](https://github.com/antonymwakiacha/supabase_proxy_backend)
 
@@ -98,12 +124,35 @@ create table public.words (
 
 ---
 
-## 💡 Features
+## 💻 Installation & Run Locally (Flutter)
 
-* View a collection of Kenyan idioms and words
-* Learn meanings and cultural context behind each expression
-* Bookmark favorite idioms or words
-* Search functionality to quickly find terms
+1️⃣ **Clone the repository**
+
+```bash
+git clone https://github.com/antonymwakiacha/kenyandictionaryapp.git
+cd kenyandictionaryapp
+```
+
+2️⃣ **Install dependencies**
+
+```bash
+flutter pub get
+```
+
+3️⃣ **Configure API endpoint**
+In `lib/services/api_service.dart`, set the backend base URL to your Django proxy on Railway:
+
+```dart
+const String baseUrl = "https://your-django-backend-domain/api";
+```
+
+4️⃣ **Run the app on your device/emulator**
+
+```bash
+flutter run
+```
+
+> ✅ Ensure Flutter SDK is installed and a device/emulator is configured
 
 ---
 
@@ -143,4 +192,14 @@ This project is licensed under the [MIT License](LICENSE).
 You’re free to use and modify the **codebase** for learning or personal projects — but the **content** remains the property of its original creators.
 
 ---
+
+This version now gives **three ways to access your app**:
+
+1. Web App on Firebase ✅
+2. APK download from GitHub ✅
+3. Demo video on Google Drive ✅
+
+---
+
+
 
