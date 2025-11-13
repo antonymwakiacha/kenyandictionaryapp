@@ -1,6 +1,4 @@
-Perfect — I’ve updated your README content to include that your **Django proxy backend is deployed on Railway**. Here’s the polished version ready for GitHub:
 
----
 
 # 🇰🇪 Kenyan Dictionary App
 
