@@ -1,123 +1,132 @@
-# kenyandictionaryapp
-
-Perfect 👌 Here’s your **fully enhanced and badge-styled `README.md`** — professionally formatted for GitHub, including all sections, credits, and a legal disclaimer:
+Perfect — I’ve updated your README content to include that your **Django proxy backend is deployed on Railway**. Here’s the polished version ready for GitHub:
 
 ---
 
-# 🇰🇪 Flutter Dictionary App
+# 🇰🇪 Kenyan Dictionary App
 
 [![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge\&logo=flutter\&logoColor=white)](https://flutter.dev)
 [![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge\&logo=supabase\&logoColor=white)](https://supabase.com)
-[![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge\&logo=dart\&logoColor=white)](https://dart.dev)
+[![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge\&logo=django\&logoColor=white)](https://www.djangoproject.com/)
+[![Railway](https://img.shields.io/badge/Railway-FF0000?style=for-the-badge\&logo=railway\&logoColor=white)](https://railway.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-A simple and elegant **Flutter-powered dictionary app** built to help users explore and learn Kenyan words and their meanings. The app uses **Supabase** for real-time storage and retrieval of dictionary data.
+A **Flutter-powered dictionary app** that curates and presents popular Kenyan idioms, slang, and cultural expressions.
+It uses **Supabase** for real-time data storage and a **Django backend proxy**, deployed on **Railway**, for secure API communication.
 
 ---
 
 ## 🧠 Overview
 
-The **Kenyan Dictionary App** documents and preserves Kenyan slang and cultural words for easy access and learning.
-It’s built using **Flutter** (frontend) and **Supabase** (backend) to demonstrate app architecture, API integration, and UI design best practices.
+The **Kenyan Dictionary App** documents and preserves Kenyan idioms and phrases in a fun, accessible way.
+It’s built with **Flutter** (frontend), **Supabase** (database), and a **Django proxy API** (backend) deployed on **Railway** for secure, full-stack architecture.
 
-> 🛠️ This project is part of my **Flutter development portfolio**, showcasing full-stack mobile development skills.
+> 🛠️ This project is part of my **Flutter portfolio**, demonstrating complete mobile app development — from backend to UI.
 
 ---
 
 ## 🚀 Features
 
-* 🔤 Browse unique Kenyan words and meanings
+* 🔤 Explore Kenyan idioms and their meanings
 * 🔍 Smart search functionality
 * 💾 Supabase database integration
-* ⚡ Real-time updates (instant word sync)
+* ⚡ Real-time updates through API
 * 🧱 Modular Flutter architecture
-* 🎨 Clean and responsive UI
+* 🎨 Clean and responsive user interface
 
 ---
 
 ## 🧰 Tech Stack
 
-| Technology      | Purpose                         |
-| --------------- | ------------------------------- |
-| 🐦 **Flutter**  | Frontend framework              |
-| 🔮 **Supabase** | Backend, database & API         |
-| 💙 **Dart**     | Programming language            |
-| 🌐 **GitHub**   | Version control & documentation |
+| Technology      | Purpose                               |
+| --------------- | ------------------------------------- |
+| 🐦 **Flutter**  | Frontend development                  |
+| 💙 **Dart**     | Core programming language             |
+| 🔮 **Supabase** | Database & backend services           |
+| 🧩 **Django**   | API proxy backend                     |
+| 🌐 **REST API** | Communication between app and backend |
+| 🛤️ **Railway** | Hosting the Django proxy              |
+| 🧾 **GitHub**   | Version control & documentation       |
 
 ---
 
-## ⚙️ Getting Started
+## ⚙️ Architecture Overview
 
-### 1️⃣ Clone the repository
-
-```bash
-git clone https://github.com/yourusername/flutter-dictionary-app.git
-cd flutter-dictionary-app
+```
+Flutter App 
+   ↓
+Django Backend Proxy (API Layer, deployed on Railway)
+   ↓
+Supabase Database (Idioms & Words Tables)
 ```
 
-### 2️⃣ Install dependencies
+The **Django proxy** acts as a secure API middle layer to:
 
-```bash
-flutter pub get
+* Hide Supabase service keys
+* Enforce authentication and access control
+* Manage request and response logic securely
+
+Repository: [supabase_proxy_backend](https://github.com/antonymwakiacha/supabase_proxy_backend)
+
+---
+
+## 🗄️ Database Schema
+
+### **Table: `idioms`**
+
+```sql
+create table public.idioms (
+  id bigint generated always as identity not null,
+  phrase text not null,
+  meaning text not null,
+  is_bookmarked boolean null default false,
+  created_at timestamp with time zone null default now(),
+  constraint idioms_pkey primary key (id)
+) TABLESPACE pg_default;
 ```
 
-### 3️⃣ Set up Supabase
+### **Table: `words`**
 
-1. Create a project on [Supabase](https://supabase.com)
-2. Create a table named `words` with columns like:
-
-   * `id` → primary key
-   * `word` → text
-   * `definition` → text
-   * `language` → text or enum
-3. Add your Supabase URL and API key in `lib/supabase_client.dart`
-
-### 4️⃣ Run the app
-
-```bash
-flutter run
+```sql
+create table public.words (
+  id bigint generated always as identity not null,
+  name text not null,
+  type text null,
+  meaning text not null,
+  is_bookmarked boolean null default false,
+  created_at timestamp with time zone null default now(),
+  constraint words_pkey primary key (id)
+) TABLESPACE pg_default;
 ```
 
 ---
 
-## 📂 Folder Structure
+## 💡 Features
 
-```
-lib/
-├── main.dart
-├── screens/
-│   ├── home_screen.dart
-│   ├── word_details_screen.dart
-├── models/
-│   ├── word.dart
-├── services/
-│   ├── supabase_service.dart
-└── widgets/
-    ├── word_card.dart
-```
+* View a collection of Kenyan idioms and words
+* Learn meanings and cultural context behind each expression
+* Bookmark favorite idioms or words
+* Search functionality to quickly find terms
 
 ---
 
-## 📚 Educational Purpose
+## 🚀 Future Improvements
 
-This project was built to:
-
-* Showcase full-stack mobile app development
-* Demonstrate Supabase integration with Flutter
-* Build a personal project portfolio
-* Promote Kenyan linguistic culture and creativity
+* User authentication and profiles
+* Cloud syncing of bookmarks
+* Admin dashboard for adding/editing content
+* Support for regional dialects and translations
 
 ---
 
 ## ⚠️ Disclaimer
 
 > ⚖️ **Content Ownership Notice**
-> The word definitions and linguistic content used in this app **belong to the original creators** of the *Kenyan Dictionary* from their official [Instagram page](https://www.instagram.com/kenyan_dictionary/).
+> The idioms and words featured in this app belong to the original creators of **Kenyan Dictionary**, from their official [Instagram page](https://www.instagram.com/kenyan_dictionary/).
+>
+> 📝 I do **not own** the content. All credit goes to the original authors.
+> This app is created **strictly for educational and portfolio purposes**, with **no intent to monetize or infringe** on intellectual property rights.
 
-> 📝 I do **not own** the content. All credit goes to the original authors and creators of *Kenyan Dictionary*.
-> This app is created **strictly for educational and portfolio purposes**, with **no intent to monetize or infringe** upon intellectual property rights.
-
-If you are the content owner and would like removal, modification, or additional credit, please contact me directly.
+If you are the content owner and wish to request modification, attribution, or removal, please contact me directly.
 
 ---
 
@@ -133,8 +142,7 @@ If you are the content owner and would like removal, modification, or additional
 ## 🪪 License
 
 This project is licensed under the [MIT License](LICENSE).
-You’re free to use and modify the **codebase** for learning or personal projects — but the **content** remains the intellectual property of its original creators.
+You’re free to use and modify the **codebase** for learning or personal projects — but the **content** remains the property of its original creators.
 
 ---
-
 
